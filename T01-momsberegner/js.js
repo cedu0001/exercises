@@ -7,9 +7,10 @@ Funktionen skal console.logge beløbet med momsen lagt til. (moms er i procent)
 const pris = 100;
 let moms;
 
-
+//det hedder argumenter når man kalder funktionen
 momsBeregner(pris, (moms = "25"));
 
+//parametre når du kigger på funktionen
 function momsBeregner(pris, moms){
     console.log(pris + (pris *moms) / 100);
     

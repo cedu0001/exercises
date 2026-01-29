@@ -8,11 +8,11 @@ const pris = 100;
 let moms;
 
 //det hedder argumenter når man kalder funktionen
-momsBeregner(pris, (moms = "25"));
+momsBeregner(pris);
 
 //parametre når du kigger på funktionen
-function momsBeregner(pris, moms){
-    console.log(pris + (pris *moms) / 100);
+function momsBeregner(pris, moms = 25){
+    console.log(pris + (pris * moms) / 100);
     
 }
 

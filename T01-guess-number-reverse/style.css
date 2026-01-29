@@ -1,0 +1,98 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+@font-face {
+	font-family: Inter;
+	src: url(/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+h1, p, input {
+    font-family: Inter;
+}
+
+body{
+    background-color: beige;
+}
+
+h1{
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.grid_1-1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(195, 220, 155);
+    border-radius: 30px;
+    border: rgb(83, 132, 76) solid 1px;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+p, form{
+    margin-bottom: 10px;
+}
+
+input, button{
+    display: block;
+    margin-top: 8px;
+    
+}
+
+.btn-style{
+    font-size: 14px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: rgb(249, 193, 202);
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+button:last-child{
+    margin-left: 10px;
+}
+
+.btn-style:hover{
+ background-color: rgb(151, 76, 89);
+ color: white;
+ transition: 0.5s;
+ cursor: pointer;
+}
+
+#billeder{
+    border-style: none;
+}
+
+img{
+ max-width: 100%;
+ height: 300px;
+}
+
+.flex{
+    display: flex;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.makeCircular {
+animation: spin 3s forwards;
+}
+
+@keyframes spin {
+    0%{
+
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+    }
+}

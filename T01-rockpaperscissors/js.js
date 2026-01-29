@@ -26,9 +26,15 @@ function init(){
     scissorsBtn.addEventListener("click", scissorsClick);
 }
 
+
+/* function resetText(){
+    lose.classList.add("hidden"); // de her fjerner teskten der viser på skærmen
+    win.classList.add("hidden");
+    draw.classList.add("hidden");
+} */
+
 //Det som funktionerne gør er at de erklærer at værdien for variblen, 
 // userChoice er i den tilsvarende funktion "rock", samtidig med at vi som bruger vælger, kører funktionen computerChooses();
-
 function rockClick(){
     console.log("rock");
     userChoice = "rock";

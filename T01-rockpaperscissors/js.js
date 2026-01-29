@@ -27,24 +27,32 @@ function init(){
 }
 
 //Det som funktionerne gør er at de erklærer at værdien for variblen, 
-// userChoice er i den tilsvarende funktion "rock", samtidig med at vi som bruger vælger, kører funktioner computerChooses();
+// userChoice er i den tilsvarende funktion "rock", samtidig med at vi som bruger vælger, kører funktionen computerChooses();
 
 function rockClick(){
     console.log("rock");
     userChoice = "rock";
     computerChooses();
-
+    lose.classList.add("hidden"); // de her fjerner teskten der viser på skærmen
+    win.classList.add("hidden");
+    draw.classList.add("hidden");
 }
 
 function paperClick(){
     console.log("paper");
     userChoice = "paper";
     computerChooses();
+    lose.classList.add("hidden");
+    win.classList.add("hidden");
+    draw.classList.add("hidden");
 }
 function scissorsClick(){
     console.log("scissors");
     userChoice = "scissors";
     computerChooses();
+    lose.classList.add("hidden");
+    win.classList.add("hidden");
+    draw.classList.add("hidden");
 }
 
 //Denne funktion er brugerens modstander, nemlig computeren, det som den gør er at den starter en animation, 
@@ -101,9 +109,6 @@ player2.addEventListener("animationend", () => {
         lose.classList.remove("hidden");
     }
 
-
-
 });
-
 
 }

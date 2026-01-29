@@ -19,55 +19,32 @@ const youWon = document.querySelector("#thatsright");
 
 let min = 0;
 let max = 100;
-let number = Math.ceil(Math.random(min + max) * 100);
-let realNumber = 47;
+let number;
 
 // skal starte computerens gæt
-startGame.addEventListener("click", function () {
-  number = Math.ceil(Math.random(min + max) * 100);
+startGame.addEventListener("click", function (e) {
+  number = Math.floor(Math.random(min + max) * 100);
   document.getElementById("test").innerHTML = "Jeg gætter på " + number;
   console.log("Nyt tal:", number);
+  e.preventDefault();
+
+tooHigh.addEventListener("click", (e) => {
+    number = Math.floor(number / 2 + 1);
+    console.log(" tal:", number);
+    document.getElementById("test").innerHTML = "Er det " + number + "?";
+    e.preventDefault();
 });
 
+tooLow.addEventListener("click", (e) => {
+    number = Math.ceil(number * 2 - 1);
+    console.log(" tal:", number);
+    document.getElementById("test").innerHTML = "Er det " + number + "?";
+    e.preventDefault();
+});
 
+youWon.addEventListener("click", (e) => {
+    document.getElementById("test").innerHTML = "Du vandt!";
+    e.preventDefault();
+});
 
-tooHigh.addEventListener("click", tooHigh);
-tooLow.addEventListener("click", tooLow);
-// computer vandt, men skal gætte igen
-youWon.addEventListener("click", youWon);
-/* tooHigh.addEventListener("click", );
-tooLow.addEventListener("click", )
-thatsRight.addEventListener("click",) */
-
-
-/* guessNumber();
-function guessNumber(){
-    number = Math.floor(Math.random(min + max) * 100);
-} */
-
-// funktion som laver en ny beregning der tager number og laver et nyt regnestykke (too high)
-
-// funktion som laver en ny beregning der tager number og laver et nyt regnestykke (too low)
-
-console.log(number)
-
-// "jeg gætter på ${guessedNumber}"
-
-/*  number = Math.floor(Math.random(min + max)/2); */
-
-
-
-
-// guessNumber();
-
-// function guessNumber() {
-//   const messageElement = document.getElementById("message");
-//   if (number === realNumber) {
-//     messageElement.textContent = "Tillykke, du gættede rigtigt!";
-//   } else if (number > realNumber)
-//     messageElement.textContent = "Haha det er for lavt";
-//   else if (number < realNumber)
-//     messageElement.textContent = "Haha det er for højt";
-// }
-// console.log("Nyt tal:", number);
-// // man kan erklære to variabler for hvad den mindst må være og hvad den højest må være. min(0) max(100
+});

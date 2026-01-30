@@ -38,7 +38,7 @@ startGame.addEventListener("click", function (e) {
   e.preventDefault();
 
 tooHigh.addEventListener("click", (e) => {
-    max = number - 1;
+    max = number;
     number = Math.floor((min + max) / 2);
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
@@ -52,7 +52,7 @@ tooHigh.addEventListener("click", (e) => {
 });
 
 tooLow.addEventListener("click", (e) => {
-    max = number + 1;
+    max = number;
     number = Math.floor((min + max) / 2);
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";

@@ -16,6 +16,10 @@ const tooHigh = document.querySelector("#toohigh");
 const tooLow = document.querySelector("#toolow");
 const youWon = document.querySelector("#thatsright");
 
+const lowerImg = document.querySelector("#lower");
+const higherImg = document.querySelector("#higher");
+const winnerImg = document.querySelector("#winner");
+
 
 let min = 0;
 let max = 100;
@@ -23,28 +27,50 @@ let number;
 
 // skal starte computerens gæt
 startGame.addEventListener("click", function (e) {
-  number = Math.floor(Math.random(min + max) * 100);
+  number = Math.floor((min + max) / 2);
   document.getElementById("test").innerHTML = "Jeg gætter på " + number;
   console.log("Nyt tal:", number);
+
+    lowerImg.classList.add("hide");
+    winnerImg.classList.add("hide");
+    higherImg.classList.add("hide");
+
   e.preventDefault();
 
 tooHigh.addEventListener("click", (e) => {
-    number = Math.floor(number / 2 + 1);
+    max = number - 1;
+    number = Math.floor((min + max) / 2);
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
+    
+    lowerImg.classList.remove("hide");
+    winnerImg.classList.add("hide");
+    higherImg.classList.add("hide");
+    
     e.preventDefault();
+
 });
 
 tooLow.addEventListener("click", (e) => {
-    number = Math.ceil(number * 2 - 1);
+    max = number + 1;
+    number = Math.floor((min + max) / 2);
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
+
+    lowerImg.classList.add("hide");
+    winnerImg.classList.add("hide");
+    higherImg.classList.remove("hide");
+
     e.preventDefault();
 });
 
 youWon.addEventListener("click", (e) => {
     document.getElementById("test").innerHTML = "Du vandt!";
     e.preventDefault();
+
+    lowerImg.classList.add("hide");
+    winnerImg.classList.remove("hide");
+    higherImg.classList.add("hide");
 });
 
 });

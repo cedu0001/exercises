@@ -13,25 +13,31 @@
     </header>
     <main>
         <h1>Gæt et tal computer version!</h1>
-        <section class="grid_1-1">
+        <section class="style">
         <div>
             <p>Tænk på et tal, og jeg vil prøve at gætte det >:D</p>
             <p>Tryk på knappen: "start spillet", for at begynde.</p>
             
                 <button id="startgame" class="btn-style">Start spillet</button>
-                 <p id="test">tallet vises her fra computer</p>
-             <form>
+                 <p id="test">(computerens gæt vises her)</p>
+            
+                <img src="sad-cat.webp" alt="" id="lower" class="hide">
+                <img src="stretch-cat.jpg" alt="" id="higher" class="hide">
+                <img src="happy-cat.jpg" alt="" id="winner" class="hide">
+
                 <div class="flex">
                     <button id="toohigh" class="btn-style">For højt</button>
                     <button id="toolow" class="btn-style">For lavt</button>
                     <button id="thatsright" class="btn-style">Det rigtigt!</button>
                 </div>
-            </form>
         </div>
-          <div id="billeder" class="hide">
-                <img src="" alt="" id="kat">
-            </div>
         </section> 
+
+            <div id="billeder">
+                <img src="sad-cat.webp" alt="" id="lower" class="hide">
+                <img src="stretch-cat.jpg" alt="" id="higher" class="hide">
+                <img src="happy-cat.jpg" alt="" id="winner" class="hide">
+            </div>
     </main>
     <footer>
 

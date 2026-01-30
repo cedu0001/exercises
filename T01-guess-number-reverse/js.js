@@ -10,7 +10,7 @@ Sørg for at man ikke kan klikke på knapper man ikke skal kunne klikke på.
 For at få inspiration til løsningen af opgaven kan i sætte jer sammen i grupper af to og analysere hvad der foregår når man leger gæt et tal.
  */
 
-
+//Der laves variabler til knapper og billeder
 const startGame = document.querySelector("#startgame");
 const tooHigh = document.querySelector("#toohigh");
 const tooLow = document.querySelector("#toolow");
@@ -25,25 +25,27 @@ let min = 0;
 let max = 100;
 let number;
 
-// skal starte computerens gæt
+// Når man klikker på startGame knappen så kører funktionen,
+// her gætter computeren tilfældigt på et tal mellem 0 og 100 eller min og max
 startGame.addEventListener("click", function (e) {
-  number = Math.floor((min + max) / 2);
+  number = Math.floor((min + max) / 2);// regner ud at midten af min og max er 50
+  //let number2 = ((max - min)/2) + min (en anden måde at gøre det på)
   document.getElementById("test").innerHTML = "Jeg gætter på " + number;
   console.log("Nyt tal:", number);
 
-    lowerImg.classList.add("hide");
+    lowerImg.classList.add("hide"); // de her tre linjer sjuler billederne 
     winnerImg.classList.add("hide");
     higherImg.classList.add("hide");
 
-  e.preventDefault();
+  e.preventDefault(); // den her forhindrer siden i at reloade
 
-tooHigh.addEventListener("click", (e) => {
-    max = number;
-    number = Math.floor((min + max) / 2);
+tooHigh.addEventListener("click", (e) => { //når man klikker på for højt knappen så kører funktionen
+    max = number; //næste gæt er 50 er derfor max = 25
+    number = Math.floor((min + max) / 2); 
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
     
-    lowerImg.classList.remove("hide");
+    lowerImg.classList.remove("hide");// de her tre linjer sjuler 2 billeder og fjerne hide klassen på en
     winnerImg.classList.add("hide");
     higherImg.classList.add("hide");
     
@@ -57,7 +59,7 @@ tooLow.addEventListener("click", (e) => {
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
 
-    lowerImg.classList.add("hide");
+    lowerImg.classList.add("hide"); // de her tre linjer sjuler 2 billeder og fjerne hide klassen på en
     winnerImg.classList.add("hide");
     higherImg.classList.remove("hide");
 
@@ -68,7 +70,7 @@ youWon.addEventListener("click", (e) => {
     document.getElementById("test").innerHTML = "Du vandt!";
     e.preventDefault();
 
-    lowerImg.classList.add("hide");
+    lowerImg.classList.add("hide"); // de her tre linjer sjuler 2 billeder og fjerne hide klassen på en
     winnerImg.classList.remove("hide");
     higherImg.classList.add("hide");
 });

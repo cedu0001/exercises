@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lommeregner</title>
+    <script src="js.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section class="flex">
+        <!-- 1. tekst boks -->
+        <label for="1-tal">1. tal</label>
+        <input type="text" id="firstnum" name="1-tal">
+        
+        <!-- regneart -->
+         <label for="regnerat">Regneart</label>
+        <select name="regne-dropdown" id="regne-dropdown"> <!-- dropdown -->
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="gange">*</option>
+            <option value="division">/</option>
+
+        </select> 
+        <!-- 2. tekst boks -->
+        <label for="2-tal">2. tal</label>
+        <input type="text" id="secondnum" name="2-tal">
+
+        <input type="submit" value="Beregn" id="beregn">
+        <p id="result" ></p>
+
+    </section>
+
+</body>
+</html>

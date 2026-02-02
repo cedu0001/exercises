@@ -1,4 +1,5 @@
-"use strict";
+
+
 /* 
 Nu skal vi lave en “Gæt et tal” igen, men med rollerne byttet rundt:
 Det er nu computeren der skal gætte det tal mellem 0 og 100 du tænker på.
@@ -11,6 +12,8 @@ For at få inspiration til løsningen af opgaven kan i sætte jer sammen i grupp
  */
 
 //Der laves variabler til knapper og billeder
+import { getRandomNumber } from "../utils/utils_lib.js";
+
 const startGame = document.querySelector("#startgame");
 const tooHigh = document.querySelector("#toohigh");
 const tooLow = document.querySelector("#toolow");
@@ -25,10 +28,12 @@ let min = 0;
 let max = 100;
 let number;
 
+
+
 // Når man klikker på startGame knappen så kører funktionen,
 // her gætter computeren tilfældigt på et tal mellem 0 og 100 eller min og max
 startGame.addEventListener("click", function (e) {
-  number = Math.floor((min + max) / 2);// regner ud at midten af min og max er 50
+  number = getRandomNumber(min, max); // regner ud at midten af min og max er 50
   //let number2 = ((max - min)/2) + min (en anden måde at gøre det på)
   document.getElementById("test").innerHTML = "Jeg gætter på " + number;
   console.log("Nyt tal:", number);
@@ -41,7 +46,7 @@ startGame.addEventListener("click", function (e) {
 
 tooHigh.addEventListener("click", (e) => { //når man klikker på for højt knappen så kører funktionen
     max = number; //næste gæt er 50 er derfor max = 25
-    number = Math.floor((min + max) / 2); 
+    number = getRandomNumber(min, max); 
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
     
@@ -55,7 +60,7 @@ tooHigh.addEventListener("click", (e) => { //når man klikker på for højt knap
 
 tooLow.addEventListener("click", (e) => {
     max = number;
-    number = Math.floor((min + max) / 2);
+    number = getRandomNumber(min, max); 
     console.log(" tal:", number);
     document.getElementById("test").innerHTML = "Er det " + number + "?";
 

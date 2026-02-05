@@ -13,6 +13,26 @@
     Style tabellen endnu mere
  */
 
+// knap med data-filter //ekstra
+document.querySelectorAll("button").forEach((btn) =>{
+  console.log("button", btn);
+  btn.addEventListener("click", klik)
+
+});
+
+function klik(evt){
+  evt.target;
+  if(evt.target.dataset.filter === "electricVehicles"){
+    showTheseVehicles(electricVehicles);
+  } else if (evt.target.dataset.filter === "vehiclesWithMoreThanTwoSeats"){
+    showTheseVehicles(vehiclesWithMoreThanTwoSeats);
+  } else if (evt.target.dataset.filter === "electricVehiclesOwnedByJonas"){
+    showTheseVehicles(electricVehiclesOwnedByJonas);
+  } else if (evt.target.dataset.filter === "vehiclesWithAtLeastTwoSeats"){
+    showTheseVehicles(vehiclesWithAtLeastTwoSeats);
+  }
+}
+
 // Opretter et array (liste) af objekter, hvor hvert objekt repræsenterer et køretøj med forskellige egenskaber
 const vehicles = [
   { type: "Bus", fuel: "Diesel", passengers: 45, stops: ["Nørrebrogade", "Elmegade"] },
@@ -109,3 +129,8 @@ document.getElementById("extraseats").addEventListener("click", () => {
 
 // Kalder funktionen showTheseVehicles med hele vehicles-arrayet som argument, så alle køretøjer vises ved sidenes start
 showTheseVehicles(vehicles);
+
+
+
+
+

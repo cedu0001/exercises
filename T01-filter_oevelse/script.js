@@ -99,11 +99,11 @@ document.getElementById("electricOwnedByJonas").addEventListener("click", () => 
   showTheseVehicles(electricVehiclesOwnedByJonas);
 });
 
+//alle rugbrøds drevne fartøjer med plads til mere end en.
 // Tilføjer en event listener til knappen med id "extraseats", der filtrerer og viser kun køretøjer med mindst 2 passagerpladser
 document.getElementById("extraseats").addEventListener("click", () => {
   const vehiclesWithAtLeastTwoSeats = vehicles.filter(
-    (vehicle) => vehicle.passengers >= 2,
-  );
+    (vehicle) => vehicle.passengers > 1 && vehicle.fuel === "Rugbrød");
   showTheseVehicles(vehiclesWithAtLeastTwoSeats);
 });
 

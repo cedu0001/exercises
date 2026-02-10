@@ -1,0 +1,50 @@
+
+
+[data-filter ="light"]{
+     --header-bg-color: rgb(228, 226, 194);
+     --header-color: rgb(32, 26, 26);
+     --main-bg-color: #a9d287;
+     --main-color: rgb(32, 26, 26);
+     --footer-bg-color: rgb(116, 176, 85);
+     --footer-color: rgb(32, 26, 26);
+}
+
+[data-filter ="dark"]{
+     --header-bg-color: rgb(82, 101, 130);
+     --header-color: rgb(235, 235, 221);
+     --main-bg-color: rgb(73, 79, 113);
+     --main-color: rgb(235, 235, 221);
+     --footer-bg-color: rgb(37, 53, 66);
+     --footer-color: rgb(235, 235, 221);
+}
+
+[data-filter ="hawaii"]{
+     --header-bg-color: rgb(236, 43, 43);
+     --header-color: rgb(32, 26, 26);
+     --main-bg-color: rgb(77, 211, 72);
+     --main-color: rgb(32, 26, 26);
+     --footer-bg-color: rgb(232, 212, 30);
+     --footer-color: rgb(32, 26, 26);
+}
+
+header{
+    padding: 10px;
+    background-color: var(--header-bg-color);
+    color: var(--header-color);
+}
+
+main{
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    padding: 10px;
+}
+
+footer{
+    background-color: var(--footer-bg-color);
+    color: var(--footer-color);
+    padding: 10px;
+}
+
+
+
+
